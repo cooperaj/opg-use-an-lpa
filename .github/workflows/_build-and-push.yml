@@ -237,6 +237,12 @@ jobs:
           skip-dirs: /app/vendor
         if: (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
 
+      - name: Setup debug tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
+
 #      - name: Upload Trivy scan results to GitHub Security tab
 #        id: trivy_upload_sarif
 #        uses: github/codeql-action/upload-sarif@v2
