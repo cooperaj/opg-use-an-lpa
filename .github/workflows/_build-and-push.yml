@@ -75,7 +75,7 @@ jobs:
 
       - name: cache node modules
         id: cache-npm
-        uses: actions/cache@365406cb701e1cc758077b05049298a49a8b71c2 # pin@v3.0.8
+        uses: actions/cache@87396fe6b4d327202df854ff5b3e0a4ea3d77ac6 # pin@v3.0.8
         env:
           cache-name: cache-node-modules
         with:
