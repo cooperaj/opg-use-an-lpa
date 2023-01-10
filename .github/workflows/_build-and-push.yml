@@ -93,18 +93,18 @@ jobs:
         if: |
           inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix
 
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@67fbcbb121271f7775d2e7715933280b06314838 # pin@v1.7.0
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ACTIONS }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ACTIONS }}
-          aws-region: eu-west-1
-          role-to-assume: arn:aws:iam::311462405659:role/opg-use-an-lpa-ci
-          role-duration-seconds: 1800
-          role-session-name: OPGUseAnLPAECRGithubAction
-        if: |
-          inputs.push_to_ecr == 'true' &&
-          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
+#      - name: configure aws credentials
+#        uses: aws-actions/configure-aws-credentials@67fbcbb121271f7775d2e7715933280b06314838 # pin@v1.7.0
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ACTIONS }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ACTIONS }}
+#          aws-region: eu-west-1
+#          role-to-assume: arn:aws:iam::311462405659:role/opg-use-an-lpa-ci
+#          role-duration-seconds: 1800
+#          role-session-name: OPGUseAnLPAECRGithubAction
+#        if: |
+#          inputs.push_to_ecr == 'true' &&
+#          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
 
       - name: download artifact
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
@@ -237,36 +237,36 @@ jobs:
           skip-dirs: /app/vendor
         if: (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
 
-      - name: Upload Trivy scan results to GitHub Security tab
-        id: trivy_upload_sarif
-        uses: github/codeql-action/upload-sarif@v2
-        if: |
-          always() && (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
-        with:
-          sarif_file: 'trivy-results.sarif'
-
-      - name: ecr login
-        id: login_ecr
-        uses: aws-actions/amazon-ecr-login@9149ade017c57f86dea2f76a01f8b2d5bd06b10f # pin@v1.5.1
-        with:
-          registries: 311462405659
-        if: |
-          inputs.push_to_ecr == 'true' &&
-          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
-
-      - name: tag and push container
-        env:
-          ECR_REGISTRY: ${{ steps.login_ecr.outputs.registry }}
-          ECR_REGISTRY_ALIAS: use_an_lpa
-          IMAGE_TAG: ${{ inputs.tag }}
-          IMAGE_NAME: ${{ matrix.svc_prefix }}_${{ matrix.svc_suffix }}
-          BRANCH_NAME: ${{ inputs.branch_name }}
-        run: |
-          docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME:$IMAGE_TAG
-          if [[ "${BRANCH_NAME}" == "main" ]]; then
-            docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME:latest
-          fi
-          docker push --all-tags $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME
-        if: |
-          inputs.push_to_ecr == 'true' &&
-          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
+#      - name: Upload Trivy scan results to GitHub Security tab
+#        id: trivy_upload_sarif
+#        uses: github/codeql-action/upload-sarif@v2
+#        if: |
+#          always() && (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
+#        with:
+#          sarif_file: 'trivy-results.sarif'
+#
+#      - name: ecr login
+#        id: login_ecr
+#        uses: aws-actions/amazon-ecr-login@9149ade017c57f86dea2f76a01f8b2d5bd06b10f # pin@v1.5.1
+#        with:
+#          registries: 311462405659
+#        if: |
+#          inputs.push_to_ecr == 'true' &&
+#          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
+#
+#      - name: tag and push container
+#        env:
+#          ECR_REGISTRY: ${{ steps.login_ecr.outputs.registry }}
+#          ECR_REGISTRY_ALIAS: use_an_lpa
+#          IMAGE_TAG: ${{ inputs.tag }}
+#          IMAGE_NAME: ${{ matrix.svc_prefix }}_${{ matrix.svc_suffix }}
+#          BRANCH_NAME: ${{ inputs.branch_name }}
+#        run: |
+#          docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME:$IMAGE_TAG
+#          if [[ "${BRANCH_NAME}" == "main" ]]; then
+#            docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME:latest
+#          fi
+#          docker push --all-tags $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$IMAGE_NAME
+#        if: |
+#          inputs.push_to_ecr == 'true' &&
+#          (inputs.specific_path == 'all' || inputs.specific_path == matrix.svc_prefix)
