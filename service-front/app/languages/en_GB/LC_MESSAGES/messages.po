@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2026-05-11T07:02:41+00:00\n"
 "PO-Revision-Date: 2026-10-07 14:13+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Last-Translator: Adam Cooper <adam.cooper@digital.justice.gov.uk>\n"
 "Language-Team: English (United Kingdom) <https://moj.weblate.cloud/projects/"
 "opg-use-an-lpa-test/service-front/en_GB/>\n"
 "Language: en_GB\n"
@@ -4712,7 +4712,6 @@ msgstr "Request an activation key"
 
 #. Contains GOV.UK HTML elements and classes. Preserve the HTML structure and classes when translating.
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:18
-#, fuzzy
 msgctxt "html"
 msgid "activation-key-request.start.content.can-only-ask-for"
 msgstr ""
@@ -4726,13 +4725,11 @@ msgstr ""
 "</ul>"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:26
-#, fuzzy
 msgid "activation-key-request.start.heading.details.title"
 msgstr "Details you’ll need to give us"
 
 #. Contains GOV.UK HTML markup and a contact-us link using the %link% placeholder.
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:28
-#, fuzzy
 msgctxt "html-link"
 msgid "activation-key-request.start.content.details-need-to-give"
 msgstr ""
@@ -4749,7 +4746,6 @@ msgstr ""
 "</ul>"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:38
-#, fuzzy
 msgid "activation-key-request.start.reveal-title"
 msgstr ""
 "Where to find the <abbr title=\"lasting power of attorney\">LPA</abbr> "
@@ -4757,7 +4753,6 @@ msgstr ""
 
 #. Contains a contact-us link using the %link% placeholder.
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:43
-#, fuzzy
 msgctxt "html-link"
 msgid "activation-key-request.start.reveal-content"
 msgstr ""
@@ -4776,23 +4771,19 @@ msgstr ""
 "href=\"%link%\">contact us</a>.</p>"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:9
-#, fuzzy
 msgid "common.back-link"
 msgstr "Back"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:53
-#, fuzzy
 msgid "common.button-continue"
 msgstr "Continue"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:58
-#, fuzzy
 msgid "common.button-cancel"
 msgstr "Cancel"
 
 #. Contains GOV.UK HTML elements and classes. Preserve the HTML structure and classes when translating.
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:22
-#, fuzzy
 msgctxt "html"
 msgid "activation-key-request.start.content.cannot-ask-for"
 msgstr ""
