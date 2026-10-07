@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:3
 msgid "activation-key-request.start.title"
-msgstr "activation-key-request.start.title"
+msgstr "Request an activation key"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:16
 msgid "activation-key-request.start.heading-page"
