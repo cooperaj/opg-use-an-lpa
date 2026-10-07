@@ -19,7 +19,7 @@ msgstr "Request an activation key"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:16
 msgid "activation-key-request.start.heading-page"
-msgstr "activation-key-request.start.heading-page"
+msgstr "Request an activation key"
 
 #. Contains GOV.UK HTML elements and classes. Preserve the HTML structure and classes when translating.
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:18
