@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2026-05-11T07:02:41+00:00\n"
-"PO-Revision-Date: 2026-10-07 13:19+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-07 13:24+0000\n"
+"Last-Translator: Adam Cooper <adam.cooper@digital.justice.gov.uk>\n"
 "Language-Team: Welsh <https://moj.weblate.cloud/projects/opg-use-an-lpa-test/"
 "service-front/cy/>\n"
 "Language: cy\n"
@@ -4721,7 +4721,6 @@ msgid "The donor has said that this <abbr title=\"lasting power of attorney\">LP
 msgstr "Dywedodd y rhoddwr y gellir defnyddio’rv <abbr title=\"atwrneiaeth arhosol\">LPA</abbr> hon nawr. Er bod gan y rhoddwr alluedd meddyliol, gall ofyn i’w atwrneiod weithredu ar ei ran o hyd"
 
 #: src/Actor/templates/actor/request-activation-key/before-requesting-activation-key-info.html.twig:3
-#, fuzzy
 msgid "activation-key-request.start.title"
 msgstr "Gofyn am god actifadu"
 
